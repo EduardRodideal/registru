@@ -31,3 +31,8 @@ td {
   border: 1px solid black;
   border-collapse: collapse;
 }
+.text-field {
+  width: 150px;
+  display: inline;
+  color: red;
+}

@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import { RowRegister } from "./RowRegister";
 import { RowRegisterHead } from "./RowRegisterHead";
 import { CorrespondenceRegister } from "./CorrespondenceRegister";
+import { AddDocument } from "./AddDocument";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,9 +50,10 @@ export const RegisterOne = () => {
         <Grid className="margin-align" item xs={9}>
           <Grid container>
             <Grid item xs={12}>
-              <Button className="mrl-button" variant="contained">
+              <AddDocument />
+              {/* <Button className="mrl-button" variant="contained">
                 Adaugă document nou
-              </Button>
+              </Button> */}
               <Button variant="contained">Redactează</Button>
               <Button variant="contained">Ștege</Button>
               <Button variant="contained">Transfer document</Button>
