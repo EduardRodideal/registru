@@ -240,7 +240,7 @@ export const AddDocument = () => {
     <Grid className={classes.paper} container>
       <Grid container justify="flex-end">
         <IconButton onClick={handleClose}>
-          <CloseIcon />
+          <CloseIcon color="secondary" />
         </IconButton>
       </Grid>
       <Grid item xs={12}>
@@ -408,11 +408,18 @@ export const AddDocument = () => {
       <Grid container justify="flex-end">
         <Grid style={{ marginTop: "20px" }} item xs={6}>
           <Grid container justify="flex-end">
-            <Button variant="contained">Redactează</Button>
-            <Button style={{ marginLeft: "10px" }} variant="contained">
+            <Button color="primary" variant="contained">
+              Redactează
+            </Button>
+            <Button
+              color="primary"
+              style={{ marginLeft: "10px" }}
+              variant="contained"
+            >
               Șterge
             </Button>
             <Button
+              color="primary"
               style={{ marginLeft: "10px", marginRight: "10px" }}
               variant="contained"
             >
@@ -426,8 +433,13 @@ export const AddDocument = () => {
   );
 
   return (
-    <div style={{ display: "inline" }}>
-      <Button className="mrl-button" variant="contained" onClick={handleOpen}>
+    <div style={{ display: "inline", marginLeft: "5px" }}>
+      <Button
+        color="primary"
+        className="mrl-button"
+        variant="contained"
+        onClick={handleOpen}
+      >
         Adaugă document nou
       </Button>
       <Modal

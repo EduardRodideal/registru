@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
@@ -7,6 +7,7 @@ import { RowRegister } from "./RowRegister";
 import { RowRegisterHead } from "./RowRegisterHead";
 import { CorrespondenceRegister } from "./CorrespondenceRegister";
 import { AddDocument } from "./AddDocument";
+import { SearchAccordion } from "./SearchAccordion";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
 
 export const RegisterOne = () => {
   const classes = useStyles();
+  const [isSearchAccordion, setIsSearchAccordion] = useState(false);
+
+  const handleSearchAccordion = () => {
+    setIsSearchAccordion(!isSearchAccordion);
+  };
 
   return (
     <div className={classes.root}>
@@ -48,21 +54,62 @@ export const RegisterOne = () => {
           </Grid>
         </Grid>
         <Grid className="margin-align" item xs={9}>
-          <Grid container>
+          <Grid container style={{ marginTop: "5px" }}>
             <Grid item xs={12}>
               <AddDocument />
-              {/* <Button className="mrl-button" variant="contained">
-                Adaugă document nou
-              </Button> */}
-              <Button variant="contained">Redactează</Button>
-              <Button variant="contained">Ștege</Button>
-              <Button variant="contained">Transfer document</Button>
-              <Button variant="contained">Caută</Button>
-              <Button variant="contained">Rapoarte/Statistici</Button>
-              <Button variant="contained">Setări</Button>
-              <Button variant="contained">Ajutor</Button>
+              <Button
+                color="primary"
+                style={{ marginLeft: "7px" }}
+                variant="contained"
+              >
+                Redactează
+              </Button>
+              <Button
+                color="primary"
+                style={{ marginLeft: "7px" }}
+                variant="contained"
+              >
+                Ștege
+              </Button>
+              <Button
+                color="primary"
+                style={{ marginLeft: "7px" }}
+                variant="contained"
+              >
+                Transfer document
+              </Button>
+              <Button
+                color="primary"
+                style={{ marginLeft: "7px" }}
+                onClick={handleSearchAccordion}
+                variant="contained"
+              >
+                Caută
+              </Button>
+              <Button
+                color="primary"
+                style={{ marginLeft: "7px" }}
+                variant="contained"
+              >
+                Rapoarte/Statistici
+              </Button>
+              <Button
+                color="primary"
+                style={{ marginLeft: "7px" }}
+                variant="contained"
+              >
+                Setări
+              </Button>
+              <Button
+                color="primary"
+                style={{ marginLeft: "7px" }}
+                variant="contained"
+              >
+                Ajutor
+              </Button>
             </Grid>
-            <Grid item xs={12}>
+            {isSearchAccordion && <SearchAccordion />}
+            <Grid style={{ marginTop: "5px" }} item xs={12}>
               <CorrespondenceRegister />
             </Grid>
           </Grid>
